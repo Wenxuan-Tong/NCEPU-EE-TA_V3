@@ -27,9 +27,9 @@ marketing:
     # 网站类型
     site_type: Organization
     # 组织名称
-    org_name: '华北电力大学重力储能研究团队'
+    org_name: '华北电力大学-陈艳波研究团队'
     # 网站描述
-    description: '致力于重力储能技术创新与应用的研究团队'
+    description: '致力于新型电力系统稳定运行技术创新与应用的研究团队'
     # 社交媒体
     twitter: ''
   # 统计分析
@@ -64,7 +64,8 @@ header:
     # 使用图片作为logo
     image:
       # 设置logo图片路径 (放在assets/media/目录下)
-      filename: 'logo.svg'
+#      filename: 'logo.svg'
+      filename: 'logo.png'
       # 设置透明背景
       transparent: true
     # 显示标题文字
@@ -75,7 +76,7 @@ header:
 footer:
   copyright:
     # 版权声明
-    notice: '© {year} 华北电力大学重力储能研究团队. 保留所有权利.'
+    notice: '© {year} 华北电力大学-陈艳波研究团队. 保留所有权利.'
     license:
       # 是否启用许可证
       enable: true

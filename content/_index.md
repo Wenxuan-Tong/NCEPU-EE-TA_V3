@@ -8,13 +8,13 @@ sections:
   - block: hero
     content:
       title: |
-        **华北电力大学重力储能研究团队**<br>
-        **NCEPU-Gravity Energy Storage Team**
+        **华北电力大学-陈艳波研究团队**<br>
+        **NCEPU-Chen Yanbo Research Team**
       image:
         filename: image.png
       text: |
         <br>
-        华北电力大学重力储能研究团队隶属于新能源电力系统国家重点实验室，致力于开发创新的储能解决方案，为全球能源转型提供中国智慧。
+        华北电力大学-陈艳波研究团队隶属于新能源电力系统国家重点实验室，致力于开发创新的新型电力系统稳定运行方案，为全球能源转型提供中国智慧。
     design:
       columns: '2'
       css_class: text-center
@@ -68,7 +68,7 @@ sections:
   - block: collection
     content:
       title: 最新成果
-      text: ""
+      text: "**待填充内容**"
       count: 3
       filters:
         folders:
@@ -87,4 +87,5 @@ sections:
         {{% cta cta_link="./contact/" cta_text="了解更多 →" %}}
     design:
       columns: '1'
+
 ---
