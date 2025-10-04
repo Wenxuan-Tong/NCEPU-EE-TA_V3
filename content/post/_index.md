@@ -6,6 +6,6 @@ view: compact
 
 # Optional banner image (relative to `assets/media/` folder).
 banner:
-  caption: ''
-  image: ''
+  caption: '66Optional banner image '
+  image: 'Images/test2.jpg'
 ---
