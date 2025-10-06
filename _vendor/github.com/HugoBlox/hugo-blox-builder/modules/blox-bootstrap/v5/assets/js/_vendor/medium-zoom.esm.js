@@ -391,7 +391,7 @@ var _images = images;
 
       // If the selected <img> tag is inside a <picture> tag, set the
       // currently-applied source as the cloned `src=` attribute.
-      // (as these might differ, or src= might be unset in some cases)
+      // (as these might differ, or src= might be unset in some national-platforms)
       if (active.original.parentElement && active.original.parentElement.tagName === 'PICTURE' && active.original.currentSrc) {
         active.zoomed.src = active.original.currentSrc;
       }

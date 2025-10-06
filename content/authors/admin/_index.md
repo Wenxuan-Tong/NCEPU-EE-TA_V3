@@ -33,7 +33,7 @@ education:
   courses:
     - course: 重力储能示范工程
       institution: 华北电力大学
-      year: 2024
+      year: curriculum2
     - course: 储能技术研发中心
       institution: 新能源电力系统国家重点实验室
       year: 2023

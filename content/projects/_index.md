@@ -2,7 +2,7 @@
 # 页面基础信息
 title: "科研项目"                                    # 页面标题
 description: "华北电力大学重力储能团队承担或参与的科研项目一览"  # 页面描述，用于SEO
-date: 2025-03-14                                    # 页面创建/更新日期
+date: 2025-03-14                                   # 页面创建/更新日期
 draft: false                                        # 是否为草稿，false表示可以发布
 type: landing                                       # 页面类型，landing支持sections布局
 
