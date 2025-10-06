@@ -1,15 +1,13 @@
 ---
-title: "杨柏诚荣获第十二届“中国软件杯”大学生软件设计大赛一等奖"
-summary: "围绕新能源电力系统应用场景完成算法与系统设计，荣获国家级一等奖。"
-date: 2023-09-01
-year: 2023
-category: "竞赛获奖"
-level: "国家级"
-student: "刘鸿海 等"
-unit: "工信部、教育部、江苏省人民政府"
-tags: ["学生竞赛","国家级"]
-featured: false
-image: { focal_point: "Center" }
+title: "教学成果与奖项"
+subtitle: "本栏目汇集教学成果奖、示范案例、论文与专著等。"
+# 关键：启用 book 布局（主题已内置 layouts/book/*）
+type: book
+# 排序（顶栏显示顺序由 menus.yaml 决定，这里是列表中的默认顺序）
+weight: 10
+## 可选：让子级按权重排序
+#cascade:
+#  type: book
+#  weight: 10
 ---
-作品简介（50–120字）：
-哈哈哈
+这里可以写一段总述（可选）。

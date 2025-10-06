@@ -6,6 +6,6 @@ view: compact
 
 # Optional header image (relative to `assets/media/` folder).
 banner:
-  caption: ''
+  caption: '549875'
   image: ''
 ---
