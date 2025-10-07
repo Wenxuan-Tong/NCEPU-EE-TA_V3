@@ -1,9 +1,9 @@
 ---
 title: "教学成果与奖项"
-subtitle: "本栏目汇集教学成果奖、被采用示范与论文/专著。"
-type: book
+layout: section-list        # ★ 使用通用两栏模板
 weight: 10
+summary: ""                 # 顶层可留空或写一句简介
 cascade:
-  type: book
+  layout: section-list      # ★ 子级默认沿用两栏模板
   weight: 10
 ---

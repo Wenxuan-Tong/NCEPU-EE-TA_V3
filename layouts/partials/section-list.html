@@ -1,0 +1,86 @@
+{{/* 通用两栏栏目模板（二级边栏 + 右侧内容区），与主题 baseof 集成 */}}
+
+{{ $root := .CurrentSection }}
+{{ if not $root.Parent }}{{ $root = . }}{{ end }}
+
+{{/* 二级栏目列表（root 下的直接子 section） */}}
+{{ $seconds := $root.Sections }}
+{{ $seconds = $seconds.ByWeight }}
+{{ $seconds = $seconds.ByTitle }}
+
+<div class="container py-4">
+  <div class="row">
+    <!-- 左侧导航 -->
+    <aside class="col-12 col-md-3 mb-4">
+      <div class="list-group sticky-top" style="top: 6rem;">
+        {{ if gt (len $seconds) 0 }}
+          {{ range $seconds }}
+            {{ $active := cond (eq .RelPermalink $.RelPermalink) "active" "" }}
+            <a class="list-group-item list-group-item-action {{$active}}"
+               href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ end }}
+        {{ else }}
+          <span class="text-muted small">暂无子栏目</span>
+        {{ end }}
+      </div>
+    </aside>
+
+    <!-- 右侧内容 -->
+    <main class="col-12 col-md-9">
+      {{ if eq $.RelPermalink $root.RelPermalink }}
+        {{/* 顶层页：展示各二级的摘要与最近条目 */}}
+        {{ range $seconds }}
+          <article class="mb-5 pb-4 border-bottom">
+            <h3 class="h4 mb-2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            {{ with .Summary }}<p class="text-muted">{{ . }}</p>{{ end }}
+            {{ $pages := .Pages.ByDate.Reverse | first 3 }}
+            {{ if gt (len $pages) 0 }}
+              <ul class="mb-0">
+                {{ range $pages }}
+                  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <small class="text-muted">{{ .Date.Format "2006-01-02" }}</small>
+                  </li>
+                {{ end }}
+              </ul>
+            {{ end }}
+          </article>
+        {{ end }}
+
+      {{ else }}
+        {{/* 二级页：展示本二级下的三级条目卡片（仅内容页，不含子 section） */}}
+        <header class="mb-4">
+          <h2 class="h3 mb-1">{{ .Title }}</h2>
+          {{ with .Content }}<div class="mb-2">{{ . }}</div>{{ end }}
+        </header>
+
+        {{ $children := where .Pages "Kind" "page" | first 9999 }}
+        {{ $children = $children.ByWeight | first 9999 }}
+        {{ $children = $children.ByDate.Reverse | first 9999 }}
+
+        {{ if gt (len $children) 0 }}
+          <div class="row">
+            {{ range $children }}
+              <div class="col-12 col-lg-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                  {{ with .Resources.GetMatch "featured*" }}
+                    <a href="{{ $.RelPermalink }}">{{/* 这句错了，改成下面一行 */}}</a>
+                  {{ end }}
+                  {{ with .Resources.GetMatch "featured*" }}
+                    <a href="{{ .Page.RelPermalink }}"><img class="card-img-top" src="{{ .RelPermalink }}" alt=""></a>
+                  {{ end }}
+                  <div class="card-body">
+                    <h3 class="h5"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    {{ with .Params.summary }}<p class="text-muted mb-2">{{ . }}</p>{{ end }}
+                    {{ with .Date }}<small class="text-muted">{{ .Format "2006-01-02" }}</small>{{ end }}
+                  </div>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        {{ else }}
+          <p class="text-muted">该栏目暂无内容。</p>
+        {{ end }}
+      {{ end }}
+    </main>
+  </div>
+</div>

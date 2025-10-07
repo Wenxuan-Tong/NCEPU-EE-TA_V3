@@ -483,3 +483,13 @@ table, td, th {
 //}
 //
 //}
+
+
+/* 两栏栏目样式（全站通用） */
+.list-group .list-group-item.active {
+  background-color: var(--bs-primary);
+  color: #fff;
+  border-color: var(--bs-primary);
+}
+.card img { object-fit: cover; height: 180px; }
+

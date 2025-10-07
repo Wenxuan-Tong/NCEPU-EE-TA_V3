@@ -1,6 +1,5 @@
 ---
 title: "论文与专著"
-summary: "围绕教学改革的论文、教材与专著。"
-type: book
+summary: "教学改革论文、教材与专著。"
 weight: 30
 ---
