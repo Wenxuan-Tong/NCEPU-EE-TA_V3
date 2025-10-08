@@ -1,13 +1,11 @@
 ---
-title: "国家级教学成果奖（示例）"
-summary: "国家级教学成果示例简介。"
-date: 2023-09-01
-year: 2023
-level: "国家级"
-unit: "教育部"
-owner: "示例负责人"
-featured: false
-type: book
-weight: 2
+title: "2024年度教学成果奖"
+date: 2024-10-07
+weight: 20
+summary: "展示2024年度获奖项目与团队。"
+# 如果有封面图，把 featured.jpg 放在同级目录
+resources:
+  - src: "featured.jpg"
+    name: "featured"
 ---
-这里是正文（可插入一两张图片）。若有封面图，可把 `featured.jpg` 放到本目录并在上面 `image:` 中加 caption。
+本年度学院获得 **国家级/省级/校级教学成果奖** 若干项。此处可附主要项目名称、团队与亮点。

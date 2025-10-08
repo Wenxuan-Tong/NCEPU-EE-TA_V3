@@ -1,0 +1,38 @@
+{{/* layouts/partials/nav-tree.html */}}
+{{ $ctx      := .ctx }}
+{{ $node     := .node }}
+{{ $level    := .level | default 1 }}
+{{ $max      := .max   | default 3 }}
+{{ $showRoot := .showRoot | default false }}
+
+{{ if le $level $max }}
+  {{ if $showRoot }}
+    <details class="hb-tree-node" {{ if or ($ctx.IsDescendant $node) (eq $ctx $node) }}open{{ end }}>
+      <summary><a href="{{ $node.RelPermalink }}">{{ $node.LinkTitle }}</a></summary>
+  {{ end }}
+
+  {{/* 当前层要渲染的孩子（子栏目 + 子页面） */}}
+  {{ $kids := $node.Sections | union $node.Pages }}
+  {{ $kids = sort $kids "Weight" "Title" }}
+
+  <div class="hb-tree">
+    {{ range $kids }}
+      {{ $isSection := .IsSection }}
+      {{ $isActive  := or (eq . $ctx) ($ctx.IsDescendant .) }}
+      <div class="hb-tree-item">
+        {{ if and $isSection (lt $level $max) }}
+          <details class="hb-tree-node" {{ if $isActive }}open{{ end }}>
+            <summary>
+              <a class="{{ if eq . $ctx }}active{{ end }}" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            </summary>
+            {{ partial "nav-tree.html" (dict "ctx" $ctx "node" . "level" (add $level 1) "max" $max "showRoot" false) }}
+          </details>
+        {{ else }}
+          <a class="{{ if eq . $ctx }}active{{ end }}" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+
+  {{ if $showRoot }}</details>{{ end }}
+{{ end }}

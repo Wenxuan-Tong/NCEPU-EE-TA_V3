@@ -1,20 +1,15 @@
-content/
-├─ awards/                         ← 一级栏目（顶栏）
-│  ├─ _index.md                    ← 一级栏目页（启用左侧目录）
-│  ├─ teaching-awards/             ← 二级：教学成果奖
-│  │  ├─ _index.md                 ← 二级目录页（左侧显示其子页面）
-│  │  ├─ 2025-bj-award/            ← 三级：具体条目（Page Bundle）
-│  │  │  ├─ index.md               ← 正文（图文说明）
-│  │  │  ├─ featured.jpg           ← 列表/卡片封面
-│  │  │  ├─ cert-1.jpg             ← 证书/公示等配图
-│  │  │  └─ cert-2.jpg
-│  │  └─ 2023-national-award/
-│  │     └─ index.md (+ 图)
-│  ├─ cases/                       ← 二级：被采用/示范案例
-│  │  ├─ _index.md
-│  │  └─ 2024-case-xxx/
-│  │     └─ index.md (+ 图)
-│  └─ papers-books/                ← 二级：论文与专著（如需）
-│     ├─ _index.md
-│     └─ 2022-paper-abc/
-│        └─ index.md (+ 图/PDF)
+---
+title: "示范案例：2024"
+date: 2024-06-01
+summary: "本案例入选国家级智慧教育平台应用示范项目。"
+resources:
+  - src: "featured.jpg"
+    name: "featured"
+---
+**项目背景：**  
+华北电力大学电气学院在智慧教学平台建设中，通过AI数据分析实现精准教学，入选国家级示范案例。
+
+**推广价值：**
+- 支撑全国高校的教学数据可视化；
+- 推动课程数字化转型；
+- 培育教师数字化教学能力。

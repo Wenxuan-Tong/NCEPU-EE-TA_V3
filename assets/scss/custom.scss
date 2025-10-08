@@ -483,13 +483,160 @@ table, td, th {
 //}
 //
 //}
-
-
-/* 两栏栏目样式（全站通用） */
+/* =========================
+   全站通用：列表/卡片/间距
+   ========================= */
 .list-group .list-group-item.active {
   background-color: var(--bs-primary);
   color: #fff;
   border-color: var(--bs-primary);
 }
-.card img { object-fit: cover; height: 180px; }
 
+.card img {
+  object-fit: cover;
+  height: 180px;
+}
+
+/* 顶部留白，避免贴到固定导航条 */
+.row.mt-4 { margin-top: 1.5rem !important; }
+
+/* 侧栏吸顶：跟随滚动但不压住顶栏；主题若未定义变量则用 64px 兜底 */
+.sidebar-sticky {
+  position: sticky;
+  top: calc(var(--wc-navbar-height, 64px) + 12px);
+}
+
+/* 侧栏容器 */
+.hb-navbox {
+  padding: .5rem .75rem;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: .5rem;
+  background: #fff;
+}
+/* =========================
+   折叠目录树（hb-tree）
+   ========================= */
+.hb-tree {
+  margin: 0;
+  padding-left: 0;
+  font-size: .98rem;
+}
+
+/* 每个条目的上下间距 */
+.hb-tree .hb-tree-item {
+  margin: .25rem 0;
+}
+
+/* 链接基础样式 */
+.hb-tree a {
+  text-decoration: none;
+  color: inherit;
+}
+.hb-tree a.active {
+  font-weight: 600;
+  color: var(--bs-primary);
+}
+
+/* =========================
+   details/summary 折叠节点样式
+   ========================= */
+.hb-tree details.hb-tree-node {
+  margin: .25rem 0; /* 仅控制上下间距 */
+}
+.hb-tree details.hb-tree-node > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.hb-tree details.hb-tree-node > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* 小三角图标样式 */
+.hb-tree details.hb-tree-node > summary::before {
+  content: "▸";
+  display: inline-block;
+  width: 1rem;
+  margin-right: .25rem;
+  transform-origin: center;
+  transition: transform .15s ease;
+  color: #004a8b;
+}
+.hb-tree details.hb-tree-node[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+/* =========================
+   缩进层级（通过嵌套 .hb-tree 控制）
+   ========================= */
+.hb-tree .hb-tree {           /* 二级目录 */
+  padding-left: 2rem;
+}
+.hb-tree .hb-tree .hb-tree {  /* 三级目录 */
+  padding-left: 2.5rem;
+}
+.hb-tree .hb-tree .hb-tree .hb-tree { /* 四级目录兜底 */
+  padding-left: 3rem;
+}
+
+
+/* =========================
+   激活与展开层级的颜色高亮
+   ========================= */
+
+/* 当前选中页面（active 链接） */
+.hb-tree a.active {
+  color: #004a8b;               /* 主色（你也可以改成 var(--bs-primary)） */
+  font-weight: 700;
+  border-left: 3px solid #004a8b;
+  padding-left: 0.4rem;
+  background-color: rgba(0,74,139,0.06); /* 淡蓝背景，方便区分 */
+  border-radius: .2rem;
+}
+
+/* 鼠标悬停时 */
+.hb-tree a:hover {
+  color: #004a8b;
+  text-decoration: underline;
+}
+
+/* 当前层级的父级 summary 也高亮（即打开的目录） */
+.hb-tree details.hb-tree-node[open] > summary > a {
+  color: #004a8b;
+  font-weight: 600;
+}
+
+/* 若该父层正包含 active 子项，则整体边框提示 */
+.hb-tree details.hb-tree-node[open] {
+  border-left: 2px solid rgba(0,74,139,0.3);
+  padding-left: .4rem;
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   旧样式兼容（如无需要可整段删除）
+   ========================= */
+.navtree .navtree-row { line-height: 1.3; }
+.navtree .navtree-link { display: inline-block; padding: .25rem 0; text-decoration: none; }
+.navtree .navtree-link.active { color: var(--bs-primary); font-weight: 600; }
+.navtree .navtree-item { margin-bottom: .25rem; }
+.navtree .level-1 > .navtree-row { font-weight: 600; }
+.navtree .level-2 { padding-left: .5rem; }
+.navtree .level-3 { padding-left: 1.25rem; }
+.navtree .navtree-toggle { width: 1rem; height: 1rem; border: 0; background: none; }
+.navtree .caret {
+  display: inline-block; width: 0; height: 0;
+  border-left: 4px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform .15s;
+}
+.navtree .caret.open { transform: rotate(90deg); }

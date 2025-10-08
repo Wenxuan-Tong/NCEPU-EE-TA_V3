@@ -46,13 +46,13 @@ main:
 #    url: research-introduction
 #    weight: 13
 #
-  - name: News
-    url: post
-    weight: 20
-
-  - name: Events
-    url: event
-    weight: 40
+#  - name: News
+#    url: post
+#    weight: 20
+#
+#  - name: Events
+#    url: event
+#    weight: 40
 #
 #  - name: 学术论文
 #    url: publication

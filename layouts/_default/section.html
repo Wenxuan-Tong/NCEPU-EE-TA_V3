@@ -1,10 +1,9 @@
-{{/* layouts/_default/section-list.html */}}
+{{/* layouts/_default/section.html */}}
 {{ define "main" }}
 <div class="container">
   <div class="row mt-4">
     <aside class="col-lg-3">
       <div class="hb-navbox sidebar-sticky">
-        {{/* 取整个站点对应的顶层栏目作为树根；如果你只想在 EE-awards 下显示树，就把 "section" 改成 "EE-awards" 的确切路径 */}}
         {{ $root := site.GetPage "section" "EE-awards" }}
         {{ if not $root }}{{ $root = .CurrentSection }}{{ end }}
 
@@ -19,7 +18,15 @@
     </aside>
 
     <main class="col-lg-9">
-      {{ partial "section-main.html" . }}
+      <article>
+        <header class="mb-3">
+          <h1 class="mb-2">{{ .Title }}</h1>
+          {{ with .Date }}<div class="text-muted small">{{ .Format "2006-01-02" }}</div>{{ end }}
+        </header>
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </article>
     </main>
   </div>
 </div>

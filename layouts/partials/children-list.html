@@ -1,0 +1,28 @@
+{{/*
+  内容区的“子条目列表”：
+  depth=1 时列出子 section（用于一级页）；
+  depth=2 时列出 RegularPages（用于二级页）。
+*/}}
+
+{{- $node  := .node -}}
+{{- $depth := .depth | default 1 -}}
+
+{{- if eq $depth 1 -}}
+  {{- range $node.Sections.ByWeight.Then.ByTitle -}}
+    <div class="card mb-3">
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <a href="{{ .RelPermalink }}" class="stretched-link">{{ .LinkTitle }}</a>
+        {{ with .Date }}<time class="text-muted small">{{ .Format "2006-01-02" }}</time>{{ end }}
+      </div>
+    </div>
+  {{- end -}}
+{{- else if eq $depth 2 -}}
+  {{- range $node.RegularPages.ByDate.Reverse -}}
+    <div class="card mb-3">
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <a href="{{ .RelPermalink }}" class="stretched-link">{{ .LinkTitle }}</a>
+        {{ with .Date }}<time class="text-muted small">{{ .Format "2006-01-02" }}</time>{{ end }}
+      </div>
+    </div>
+  {{- end -}}
+{{- end -}}

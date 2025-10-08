@@ -1,0 +1,29 @@
+{{/* layouts/partials/section-main.html */}}
+<article>
+  <header class="mb-3">
+    <h1 class="mb-2">{{ .Title }}</h1>
+    {{ with .Date }}<div class="text-muted small">{{ .Format "2006-01-02" }}</div>{{ end }}
+  </header>
+
+  {{ with .Content }}
+    <div class="content mb-4">{{ . }}</div>
+  {{ end }}
+
+  {{/* 当前栏目直接子页面（展示二级或三级列表） */}}
+  {{ $children := .Pages | union .Sections }}
+  {{ $children = sort $children "Date" "desc" }}
+
+  {{ if gt (len $children) 0 }}
+    <div class="list-group">
+      {{ range $children }}
+        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+           href="{{ .RelPermalink }}">
+          <span>{{ .LinkTitle }}</span>
+          {{ with .Date }}<span class="text-muted small">{{ .Format "2006-01-02" }}</span>{{ end }}
+        </a>
+      {{ end }}
+    </div>
+  {{ else }}
+    <p class="text-muted">暂无内容。</p>
+  {{ end }}
+</article>
