@@ -1,0 +1,69 @@
+{{/*
+  Shortcode: hb-gallery
+
+  用法示例：
+    {{< hb-gallery >}}                         // 默认三列，自动读取 images/*，按文件名排序
+    {{< hb-gallery cols=2 >}}                  // 两列
+    {{< hb-gallery match="images/qh-*.jpg" >}} // 按通配匹配
+    {{< hb-gallery files="a.jpg,b.png" >}}     // 显式指定文件顺序
+    {{< hb-gallery files="a.jpg,b.jpg" captions="证书,现场" >}} // 配图注
+    {{< hb-gallery match="images/*" exclude="a.jpg,b.jpg" >}}   // 排除若干文件
+*/}}
+
+{{- $cols := .Get "cols" | default 3 | int -}}
+{{- $match := .Get "match" | default "images/*" -}}
+{{- $files := .Get "files" -}}
+{{- $caps  := .Get "captions" | default "" | split "," -}}
+{{- $exs   := .Get "exclude" | default "" | split "," -}}
+
+{{- $images := slice -}}
+
+{{- if $files -}}
+  {{/* 显式文件列表：按给定顺序取 */}}
+  {{- range $name := (split $files ",") -}}
+    {{- $trim := trim $name " " -}}
+    {{- $img  := $.Page.Resources.GetMatch (printf "images/%s" $trim) -}}
+    {{- if $img }}{{ $images = $images | append $img }}{{ end -}}
+  {{- end -}}
+{{- else -}}
+  {{/* 自动匹配 images/* ：拆步做，避免 “不能 sort 字符串” 的坑 */}}
+  {{- $res := .Page.Resources.Match $match -}}
+  {{- if not $res }}{{ $res = slice }}{{ end -}}
+  {{- $res = sort $res "Name" -}}
+
+  {{/* 排除 exclude 中的文件名（不含路径） */}}
+  {{- if gt (len $exs) 0 -}}
+    {{- $filtered := slice -}}
+    {{- range $res -}}
+      {{- $name := .Name -}}
+      {{- if not (in $exs $name) -}}
+        {{- $filtered = $filtered | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $images = $filtered -}}
+  {{- else -}}
+    {{- $images = $res -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if gt (len $images) 0 -}}
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-{{ $cols }} g-4 mt-4">
+  {{- range $i, $img := $images -}}
+  <div class="col">
+    <figure>
+      <img src="{{ $img.RelPermalink }}" alt="{{ $img.Name }}" class="img-fluid rounded shadow-sm">
+      <figcaption class="text-muted small text-center mt-2">
+        {{- $cap := (index $caps $i) | default "" -}}
+        {{- if $cap -}}
+          {{ $cap }}
+        {{- else -}}
+          图{{ add $i 1 }} {{ replace $img.Name (path.Ext $img.Name) "" }}
+        {{- end -}}
+      </figcaption>
+    </figure>
+  </div>
+  {{- end -}}
+</div>
+{{- else -}}
+<p class="text-muted">（未找到图片：{{ $match }}）</p>
+{{- end -}}

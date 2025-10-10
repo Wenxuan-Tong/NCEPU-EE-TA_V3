@@ -1,37 +1,32 @@
 ---
 title: "2025年华北电力大学教学成果特等奖"
-date: 2025-06-30
-summary: "“思政铸魂、教学培才、实践育人”电气专业“一核双翼四驱”教学模式创新。"
+date: 2025-01-01
+summary: "华北电力大学电气工程学院荣获教学成果特等奖。"
 ---
 
-### 🏆 获奖概述
+### 奖项概述
+该成果以“思政铸魂、教学培才、实践育人”为核心理念，提出并实践了电气专业“一核双翼四驱”教学模式。
+该模式系统融合课程思政、能力培养与工程实践环节，形成了具有高阶性、创新性与挑战度的教学体系。
+成果在全校推广应用，显著提升了课程育人实效与学生创新能力。
 
-该成果以“思政铸魂、教学培才、实践育人”为核心理念，构建了电气专业“一核双翼四驱”的教学模式。  
-该模式通过课程思政、科研实践、工程应用与创新能力培养的多维融合，  
-显著提升了学生的综合素质和专业创新能力。
-
-### 📘 获奖信息
-
+### 获奖信息
 | 项目 | 内容 |
 |------|------|
-| 奖项名称 | 华北电力大学教学成果特等奖 |
-| 获奖项目 | “思政铸魂、教学培才、实践育人”电气专业“一核双翼四驱”教学模式创新 |
-| 获奖级别 | 校级特等奖 |
-| 团队成员 | 孙英云，陈艳波，张智，郑顺林，李庚银，艾欣，齐郑，郑乐，张天策 |
+| 奖项名称 | 教学成果特等奖 |
+| 成果名称 | “思政铸魂、教学培才、实践育人”电气专业“一核双翼四驱”教学模式创新 |
+| 获奖人 | 陈艳波、刘崇茹、李庚银、艾欣、齐郑、孙英云、张智、郑顺林、张天策、郑乐 |
 | 授予单位 | 华北电力大学 |
+| 获奖级别 | 校级 |
 | 获奖时间 | 2025年6月 |
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <figure>
-      <img src="../images/ncepu-grand-award-cert1.jpg" alt="教学成果特等奖证书" class="img-fluid rounded shadow-sm">
-      <figcaption class="text-muted small text-center mt-2">图1 教学成果特等奖证书</figcaption>
-    </figure>
-  </div>
-  <div class="col-md-6">
-    <figure>
-      <img src="../images/ncepu-grand-award-team.jpg" alt="获奖团队合影" class="img-fluid rounded shadow-sm">
-      <figcaption class="text-muted small text-center mt-2">图2 获奖团队合影</figcaption>
-    </figure>
-  </div>
-</div>
+{{< hb-figure
+src="images/img.png"
+align="center"
+maxw="80%"
+caption="图1 2025校级教学成果获奖名单通知" >}}
+
+{{< hb-figure
+src="images/img_1.png"
+align="center"
+maxw="80%"
+caption="图2 2025校级教学成果获奖名单（本科）" >}}

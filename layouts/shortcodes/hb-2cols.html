@@ -1,0 +1,32 @@
+{{/*
+  Shortcode: hb-2cols
+  用法：
+    {{< hb-2cols left="a.jpg" right="b.jpg" leftcap="左图标题" rightcap="右图标题" >}}
+*/}}
+
+{{- $l := .Get "left" -}}
+{{- $r := .Get "right" -}}
+{{- $lc := .Get "leftcap" | default "" -}}
+{{- $rc := .Get "rightcap" | default "" -}}
+
+{{- $lres := .Page.Resources.GetMatch (printf "images/%s" $l) -}}
+{{- $rres := .Page.Resources.GetMatch (printf "images/%s" $r) -}}
+
+<div class="row g-4 my-3">
+  <div class="col-md-6">
+    {{- if $lres -}}
+    <figure>
+      <img class="img-fluid rounded shadow-sm" src="{{ $lres.RelPermalink }}" alt="{{ $l }}">
+      {{- with $lc }}<figcaption class="text-muted small text-center mt-2">{{ . }}</figcaption>{{ end -}}
+    </figure>
+    {{- end -}}
+  </div>
+  <div class="col-md-6">
+    {{- if $rres -}}
+    <figure>
+      <img class="img-fluid rounded shadow-sm" src="{{ $rres.RelPermalink }}" alt="{{ $r }}">
+      {{- with $rc }}<figcaption class="text-muted small text-center mt-2">{{ . }}</figcaption>{{ end -}}
+    </figure>
+    {{- end -}}
+  </div>
+</div>

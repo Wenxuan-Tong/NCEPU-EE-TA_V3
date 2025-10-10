@@ -657,7 +657,7 @@ table, td, th {
    ========================= */
 figure img {
   border-radius: 10px; //让图片的四个角变圆
-  box-shadow: 0 4px 10px rgba(0,0,0,1); //box-shadow: X位移 Y位移 模糊度 颜色;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); //box-shadow: X位移 Y位移 模糊度 颜色;
 
   transition: transform 0.2s ease;
 }
@@ -665,3 +665,4 @@ figure img {
 figure img:hover {
   transform: scale(1.02);
 }
+

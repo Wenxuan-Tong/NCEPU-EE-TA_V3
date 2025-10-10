@@ -1,37 +1,35 @@
 ---
-title: "2025年中国仿真学会教学成果奖"
-date: 2025-06-30
-summary: "“虚实融合、分层递进”的新能源电力系统仿真实验教学体系构建与实践。"
+title: "2025年度中国仿真学会教学成果奖"
+date: 2025-01-01
+summary: "华北电力大学荣获中国仿真学会教学成果奖。"
 ---
 
-### 🏆 获奖概述
+### 奖项概述
+该教学成果构建了“虚实融合、分层递进”的新能源电力系统仿真实验教学体系，系统融合虚拟仿真与实体实训环节，形成可复制、可推广的教学模式，显著提升了学生在电力系统分析、控制与运行方面的综合实践能力。
 
-“虚实融合、分层递进”的新能源电力系统仿真实验教学体系构建与实践  
-荣获 **中国仿真学会教学成果奖（2025年度）**。该成果围绕电气类专业“基础—仿真—创新”教学链条，  
-实现了虚拟实验、综合仿真与现场实训的深度融合，为学生提供系统性创新实践平台。
-
-### 📘 获奖信息
-
+### 获奖信息
 | 项目 | 内容 |
 |------|------|
-| 奖项名称 | 中国仿真学会教学成果奖 |
+| 奖项名称 | 学会级教学成果奖 |
 | 获奖项目 | “虚实融合、分层递进”的新能源电力系统仿真实验教学体系构建与实践 |
-| 获奖级别 | 学会级 |
-| 获奖教师 | 陈艳波，刘崇茹，李庚银，艾欣，孙英云 |
+| 获奖人 | 陈艳波、刘崇茹、李庚银、艾欣、孙英云 |
 | 授予单位 | 中国仿真学会 |
-| 获奖时间 | 2025年6月 |
+| 获奖时间 | 2025年 |
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <figure>
-      <img src="../images/cert-2025-caa-1.jpg" alt="中国仿真学会教学成果奖证书1" class="img-fluid rounded shadow-sm">
-      <figcaption class="text-muted small text-center mt-2">图1 中国仿真学会教学成果奖证书</figcaption>
-    </figure>
-  </div>
-  <div class="col-md-6">
-    <figure>
-      <img src="../images/cert-2025-caa-2.jpg" alt="教学成果奖颁奖现场" class="img-fluid rounded shadow-sm">
-      <figcaption class="text-muted small text-center mt-2">图2 获奖团队颁奖现场</figcaption>
-    </figure>
-  </div>
-</div>
+{{< hb-figure
+src="images/img.png"
+align="center"
+maxw="80%"
+caption="图1 中国仿真学会教学成果评价评选结果" >}}
+
+{{< hb-figure
+src="images/img_1.png"
+align="center"
+maxw="80%"
+caption="" >}}
+
+{{< hb-figure
+src="images/img_2.png"
+align="center"
+maxw="80%"
+caption="图2 2025年度中国仿真学会高等教育教学成果" >}}

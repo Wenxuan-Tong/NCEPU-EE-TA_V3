@@ -1,0 +1,73 @@
+{{/* hb-figure.html — 合并增强版，含居中修复 */}}
+
+{{- /* 参数 */ -}}
+{{- $src     := .Get "src" -}}
+{{- $caption := .Get "caption" | default "" -}}
+{{- $alt     := .Get "alt" | default $caption -}}
+{{- $maxwRaw := .Get "maxw" | default "" -}}
+{{- $align   := lower (.Get "align" | default "center") -}}
+{{- $rounded := .Get "rounded" | default "true" -}}
+{{- $shadow  := .Get "shadow"  | default "true" -}}
+{{- $link    := .Get "link"    | default "" -}}
+{{- $addcls  := .Get "class"   | default "" -}}
+
+{{/* 解析 maxw：允许 "420" "420px" "60%" 等写法 */}}
+{{- $maxw := "" -}}
+{{- if $maxwRaw -}}
+  {{- if or (strings.HasSuffix $maxwRaw "px") (strings.HasSuffix $maxwRaw "%") -}}
+    {{- $maxw = $maxwRaw -}}
+  {{- else -}}
+    {{- $maxw = printf "%spx" $maxwRaw -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* 解析资源：优先从当前页 images/ 下找；找不到就按传入路径使用 */}}
+{{- $img := .Page.Resources.GetMatch (printf "images/%s" $src) -}}
+{{- $imgURL := "" -}}
+{{- if $img -}}
+  {{- $imgURL = $img.RelPermalink -}}
+  {{- if not $alt -}}
+    {{- $alt = replace $img.Name (path.Ext $img.Name) "" -}}
+  {{- end -}}
+{{- else -}}
+  {{- $imgURL = $src -}}
+  {{- if not $alt -}}
+    {{- $alt = replace (path.Base $src) (path.Ext (path.Base $src)) "" -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* 组合图片类（圆角/投影/自定义） */}}
+{{- $cls := slice "img-fluid" -}}
+{{- if eq $rounded "true" }}{{ $cls = $cls | append "rounded" }}{{ end -}}
+{{- if eq $shadow  "true" }}{{ $cls = $cls | append "shadow-sm" }}{{ end -}}
+{{- if $addcls }}{{ $cls = $cls | append $addcls }}{{ end -}}
+
+{{/* 对齐策略：center 用 d-block mx-auto；left/right 用浮动并加边距 */}}
+{{- $wrapCls := "my-3" -}}
+{{- if eq $align "left" -}}
+  {{- $wrapCls = printf "%s clearfix" $wrapCls -}}
+  {{- $cls = $cls | append "float-md-start" "me-md-3" "mb-3" -}}
+{{- else if eq $align "right" -}}
+  {{- $wrapCls = printf "%s clearfix" $wrapCls -}}
+  {{- $cls = $cls | append "float-md-end" "ms-md-3" "mb-3" -}}
+{{- else -}} {{/* center（默认） */}}
+  {{- $wrapCls = printf "%s text-center" $wrapCls -}}
+  {{- $cls = $cls | append "d-block" "mx-auto" -}}
+{{- end -}}
+{{- $imgCls := delimit $cls " " -}}
+
+<figure class="{{ $wrapCls }}">
+  {{- if $link -}}<a href="{{ $link }}" target="_blank" rel="noopener">{{- end -}}
+  <img src="{{ $imgURL }}" alt="{{ $alt }}" class="{{ $imgCls }}"{{ if $maxw }} style="max-width: {{ $maxw }};"{{ end }}>
+  {{- if $link -}}</a>{{- end -}}
+  {{- if $caption -}}
+    <figcaption class="text-muted small {{ if eq $align "center" }}text-center{{ else }}text-start{{ end }} mt-2">
+      {{ $caption }}
+    </figcaption>
+  {{- end -}}
+</figure>
+
+{{/* 左右浮动时，移动端下可能需要清除浮动，避免后文被包裹 */}}
+{{- if or (eq $align "left") (eq $align "right") -}}
+  <div class="d-md-none" style="clear: both;"></div>
+{{- end -}}
