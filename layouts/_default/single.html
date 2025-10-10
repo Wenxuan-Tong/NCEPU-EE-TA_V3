@@ -1,40 +1,17 @@
-{{/* layouts/_default/single.html */}}
 {{ define "main" }}
-<div class="container">
-  <div class="row mt-4">
-    <aside class="col-lg-3">
-      <div class="hb-navbox sidebar-sticky">
-        {{ $root := site.GetPage "section" "EE-awards" }}
-        {{ if not $root }}{{ $root = .CurrentSection }}{{ end }}
-
-        {{ partial "nav-tree.html" (dict
-          "ctx"   .
-          "node"  $root
-          "level" 2
-          "max"   3
-          "showRoot" false
-        ) }}
-      </div>
-    </aside>
-
-    <main class="col-lg-9">
-      <article>
-        <header class="mb-3">
-          <h1 class="mb-2">{{ .Title }}</h1>
-          {{ with .Date }}<div class="text-muted small">{{ .Format "2006-01-02" }}</div>{{ end }}
-        </header>
-
-        {{ with .Resources.GetMatch "featured*" }}
-          <figure class="mb-4">
-            <img class="img-fluid rounded" src="{{ .RelPermalink }}" alt="{{ $.Title }}">
-          </figure>
-        {{ end }}
-
-        <div class="content">
-          {{ .Content }}
+  <div class="container">
+    <div class="row mt-4">
+      <aside class="col-lg-3">
+        <div class="hb-navbox sidebar-sticky">
+          {{ $root := site.GetPage "section" "EE-awards/teaching-awards" }}
+          {{ partial "nav-tree.html" (dict "ctx" . "node" $root "level" 1 "max" 4 "showRoot" false) }}
         </div>
-      </article>
-    </main>
+      </aside>
+
+      <main class="col-lg-9">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+      </main>
+    </div>
   </div>
-</div>
 {{ end }}

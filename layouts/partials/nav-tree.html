@@ -1,38 +1,60 @@
-{{/* layouts/partials/nav-tree.html */}}
-{{ $ctx      := .ctx }}
-{{ $node     := .node }}
-{{ $level    := .level | default 1 }}
-{{ $max      := .max   | default 3 }}
-{{ $showRoot := .showRoot | default false }}
+{{/* 教学成果与奖项 左侧树：1-4 级，当前分支根据 URL 前缀自动展开 */}}
+{{- $ctx      := .ctx -}}            {{/* 当前页面 */}}
+{{- $node     := .node -}}           {{/* 树根节点（teaching-awards） */}}
+{{- $level    := .level | default 1 -}}
+{{- $max      := .max   | default 4 -}}
+{{- $showRoot := .showRoot | default false -}}
 
-{{ if le $level $max }}
-  {{ if $showRoot }}
-    <details class="hb-tree-node" {{ if or ($ctx.IsDescendant $node) (eq $ctx $node) }}open{{ end }}>
-      <summary><a href="{{ $node.RelPermalink }}">{{ $node.LinkTitle }}</a></summary>
-  {{ end }}
-
-  {{/* 当前层要渲染的孩子（子栏目 + 子页面） */}}
-  {{ $kids := $node.Sections | union $node.Pages }}
-  {{ $kids = sort $kids "Weight" "Title" }}
-
+{{- if $showRoot }}
   <div class="hb-tree">
-    {{ range $kids }}
-      {{ $isSection := .IsSection }}
-      {{ $isActive  := or (eq . $ctx) ($ctx.IsDescendant .) }}
-      <div class="hb-tree-item">
-        {{ if and $isSection (lt $level $max) }}
-          <details class="hb-tree-node" {{ if $isActive }}open{{ end }}>
-            <summary>
-              <a class="{{ if eq . $ctx }}active{{ end }}" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-            </summary>
-            {{ partial "nav-tree.html" (dict "ctx" $ctx "node" . "level" (add $level 1) "max" $max "showRoot" false) }}
-          </details>
-        {{ else }}
-          <a class="{{ if eq . $ctx }}active{{ end }}" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-        {{ end }}
-      </div>
+    {{ template "hb-tree-node" (dict "ctx" $ctx "node" $node "level" $level "max" $max) }}
+  </div>
+{{- else }}
+  <div class="hb-tree">
+    {{ range $node.Sections.ByWeight }}
+      {{ template "hb-tree-node" (dict "ctx" $ctx "node" . "level" $level "max" $max) }}
+    {{ end }}
+    {{ range $node.RegularPages.ByWeight }}
+      {{ template "hb-tree-leaf" (dict "ctx" $ctx "page" . "level" $level) }}
     {{ end }}
   </div>
+{{- end }}
 
-  {{ if $showRoot }}</details>{{ end }}
-{{ end }}
+{{- define "hb-tree-node" -}}
+  {{- $ctx := .ctx -}}
+  {{- $n   := .node -}}
+  {{- $lv  := .level -}}
+  {{- $mx  := .max -}}
+
+  {{/* 当前节点是否处于激活分支：当前页等于该节点 或 当前页 URL 以该节点 URL 为前缀 */}}
+  {{- $isActive := or (eq $ctx.RelPermalink $n.RelPermalink) (hasPrefix $ctx.RelPermalink $n.RelPermalink) -}}
+
+  <details class="hb-tree-node" {{ if $isActive }}open{{ end }}>
+    <summary>
+      <a href="{{ $n.RelPermalink }}" class="{{ if eq $ctx.RelPermalink $n.RelPermalink }}active text-primary fw-semibold{{ end }}">
+        {{ with $n.Params.menuTitle }}{{ . }}{{ else }}{{ $n.Title }}{{ end }}
+      </a>
+    </summary>
+
+    {{- if lt $lv $mx }}
+      <div class="hb-tree" style="padding-left: {{ mul $lv 1.25 }}rem;">
+        {{ range $n.Sections.ByWeight }}
+          {{ template "hb-tree-node" (dict "ctx" $ctx "node" . "level" (add $lv 1) "max" $mx) }}
+        {{ end }}
+        {{ range $n.RegularPages.ByWeight }}
+          {{ template "hb-tree-leaf" (dict "ctx" $ctx "page" . "level" (add $lv 1)) }}
+        {{ end }}
+      </div>
+    {{- end }}
+  </details>
+{{- end -}}
+
+{{- define "hb-tree-leaf" -}}
+  {{- $ctx := .ctx -}}
+  {{- $p   := .page -}}
+  <div class="hb-tree-item" style="margin-left:.25rem;">
+    <a href="{{ $p.RelPermalink }}" class="{{ if eq $ctx.RelPermalink $p.RelPermalink }}active text-primary fw-semibold{{ end }}">
+      {{ with $p.Params.menuTitle }}{{ . }}{{ else }}{{ $p.Title }}{{ end }}
+    </a>
+  </div>
+{{- end -}}

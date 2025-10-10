@@ -1,14 +1,7 @@
 ---
-title: "教材《XX教学改革案例》（示例）"
-date: 2022-05-01
-summary: "本教材入选国家级规划教材，展示教学改革成果。"
-resources:
-  - src: "featured.jpg"
-    name: "featured"
+title: 教改论文
+weight: 1
 ---
-教材《XX教学改革案例》系统总结了电气类课程教学改革路径与方法，入选教育部“十四五”职业教育国家规划教材。
 
-主要内容包括：
-1. 教学模式创新；
-2. 课程体系优化；
-3. 工程导向的实践案例。
+- 吴翔宇, 荆龙, 陈艳波. 顶层设计方案引领课程思政建设——以发电厂电气部分课程为例. *高教学刊*, 2024.
+- Xiaoling Su et al. *Grid-connected PV Generation Course Development ...*, ICDE 2022.

@@ -616,6 +616,17 @@ table, td, th {
 
 
 
+/* 左栏高亮与缩进 */
+.hb-tree a.active { font-weight: 600; color: var(--bs-primary); }
+.hb-tree details.hb-tree-node > summary::before {
+  content: "▸";
+  display: inline-block; width: 1rem; margin-right: .25rem;
+  transform-origin: center; transition: transform .15s ease; color: #6c757d;
+}
+.hb-tree details[open] > summary::before { transform: rotate(90deg); }
+
+/* 侧栏吸顶避免遮住导航条 */
+.sidebar-sticky { position: sticky; top: calc(var(--wc-navbar-height, 64px) + 12px); }
 
 
 
@@ -640,3 +651,17 @@ table, td, th {
   transition: transform .15s;
 }
 .navtree .caret.open { transform: rotate(90deg); }
+
+/* =========================
+   图片阴影美化
+   ========================= */
+figure img {
+  border-radius: 10px; //让图片的四个角变圆
+  box-shadow: 0 4px 10px rgba(0,0,0,1); //box-shadow: X位移 Y位移 模糊度 颜色;
+
+  transition: transform 0.2s ease;
+}
+
+figure img:hover {
+  transform: scale(1.02);
+}
