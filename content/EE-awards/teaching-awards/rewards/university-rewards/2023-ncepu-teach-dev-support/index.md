@@ -29,3 +29,9 @@ src="images/img_1.png"
 align="center"
 maxw="80%"
 caption="图2 2023年教师教学发展系列支持计划名单" >}}
+
+{{< hb-figure
+src="images/img_2.png"
+align="center"
+maxw="80%"
+caption="图3 2023年教师教学发展系列支持计划证书" >}}
