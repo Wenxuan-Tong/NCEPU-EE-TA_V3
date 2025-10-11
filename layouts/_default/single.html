@@ -1,17 +1,14 @@
 {{ define "main" }}
-  <div class="container">
-    <div class="row mt-4">
-      <aside class="col-lg-3">
-        <div class="hb-navbox sidebar-sticky">
-          {{ $root := site.GetPage "section" "EE-awards/teaching-awards" }}
-          {{ partial "nav-tree.html" (dict "ctx" . "node" $root "level" 1 "max" 4 "showRoot" false) }}
-        </div>
-      </aside>
+<div class="container">
+  <div class="row mt-4">
+    <aside class="col-lg-3">
+      {{ partial "nav-tree.html" (dict "ctx" . "max" 5 "showRoot" false) }}
+    </aside>
 
-      <main class="col-lg-9">
-        <h1>{{ .Title }}</h1>
-        {{ .Content }}
-      </main>
-    </div>
+    <main class="col-lg-9">
+      <h1 class="mb-3">{{ .Title }}</h1>
+      {{ .Content }}
+    </main>
   </div>
+</div>
 {{ end }}

@@ -1,60 +1,73 @@
-{{/* 教学成果与奖项 左侧树：1-4 级，当前分支根据 URL 前缀自动展开 */}}
-{{- $ctx      := .ctx -}}            {{/* 当前页面 */}}
-{{- $node     := .node -}}           {{/* 树根节点（teaching-awards） */}}
-{{- $level    := .level | default 1 -}}
-{{- $max      := .max   | default 4 -}}
+{{/* =========================================================
+  Partial: nav-tree.html
+  用法：{{ partial "nav-tree.html" (dict "ctx" . "max" 5 "showRoot" false) }}
+  - 固定根优先级：.ctx.Params.nav_root > site.Params.nav_root > 默认 "EE-awards"
+========================================================= */}}
+
+{{- $ctx      := .ctx -}}
+{{- $max      := .max | default 5 -}}
 {{- $showRoot := .showRoot | default false -}}
 
-{{- if $showRoot }}
-  <div class="hb-tree">
-    {{ template "hb-tree-node" (dict "ctx" $ctx "node" $node "level" $level "max" $max) }}
-  </div>
-{{- else }}
-  <div class="hb-tree">
-    {{ range $node.Sections.ByWeight }}
-      {{ template "hb-tree-node" (dict "ctx" $ctx "node" . "level" $level "max" $max) }}
-    {{ end }}
-    {{ range $node.RegularPages.ByWeight }}
-      {{ template "hb-tree-leaf" (dict "ctx" $ctx "page" . "level" $level) }}
-    {{ end }}
-  </div>
-{{- end }}
-
-{{- define "hb-tree-node" -}}
-  {{- $ctx := .ctx -}}
-  {{- $n   := .node -}}
-  {{- $lv  := .level -}}
-  {{- $mx  := .max -}}
-
-  {{/* 当前节点是否处于激活分支：当前页等于该节点 或 当前页 URL 以该节点 URL 为前缀 */}}
-  {{- $isActive := or (eq $ctx.RelPermalink $n.RelPermalink) (hasPrefix $ctx.RelPermalink $n.RelPermalink) -}}
-
-  <details class="hb-tree-node" {{ if $isActive }}open{{ end }}>
-    <summary>
-      <a href="{{ $n.RelPermalink }}" class="{{ if eq $ctx.RelPermalink $n.RelPermalink }}active text-primary fw-semibold{{ end }}">
-        {{ with $n.Params.menuTitle }}{{ . }}{{ else }}{{ $n.Title }}{{ end }}
-      </a>
-    </summary>
-
-    {{- if lt $lv $mx }}
-      <div class="hb-tree" style="padding-left: {{ mul $lv 1.25 }}rem;">
-        {{ range $n.Sections.ByWeight }}
-          {{ template "hb-tree-node" (dict "ctx" $ctx "node" . "level" (add $lv 1) "max" $mx) }}
-        {{ end }}
-        {{ range $n.RegularPages.ByWeight }}
-          {{ template "hb-tree-leaf" (dict "ctx" $ctx "page" . "level" (add $lv 1)) }}
-        {{ end }}
-      </div>
-    {{- end }}
-  </details>
+{{/* 允许通过 front matter 或全站参数固定根（建议设为 "EE-awards"） */}}
+{{- $wantRoot := $ctx.Params.nav_root | default $ctx.Site.Params.nav_root | default "EE-awards" -}}
+{{- $root := $ctx.Site.GetPage (printf "/%s" (trim $wantRoot "/")) -}}
+{{- if not $root -}}
+  {{- $root = $ctx.Site.GetPage (printf "section/%s" (trim $wantRoot "/")) -}}
+{{- end -}}
+{{- if not $root -}}
+  {{- $root = $ctx.CurrentSection -}}
 {{- end -}}
 
-{{- define "hb-tree-leaf" -}}
-  {{- $ctx := .ctx -}}
-  {{- $p   := .page -}}
-  <div class="hb-tree-item" style="margin-left:.25rem;">
-    <a href="{{ $p.RelPermalink }}" class="{{ if eq $ctx.RelPermalink $p.RelPermalink }}active text-primary fw-semibold{{ end }}">
-      {{ with $p.Params.menuTitle }}{{ . }}{{ else }}{{ $p.Title }}{{ end }}
-    </a>
-  </div>
+{{- if not $root -}}
+<nav class="hb-navbox hb-tree"></nav>
+{{- else -}}
+<nav class="hb-navbox hb-tree">
+  {{- if $showRoot -}}
+    {{ template "hbnode" (dict "node" $root "ctx" $ctx "level" 1 "max" $max) }}
+  {{- else -}}
+    {{- $secs  := sort $root.Sections     "Weight" "Title" -}}
+    {{- $pages := sort $root.RegularPages "Weight" "Title" -}}
+    {{- range $secs  }}{{ template "hbnode" (dict "node" . "ctx" $ctx "level" 1 "max" $max) }}{{ end -}}
+    {{- range $pages }}{{ template "hbnode" (dict "node" . "ctx" $ctx "level" 1 "max" $max) }}{{ end -}}
+  {{- end -}}
+</nav>
+{{- end -}}
+
+{{/* =============== 递归节点渲染 =============== */}}
+{{- define "hbnode" -}}
+  {{- $node  := .node -}}
+  {{- $ctx   := .ctx -}}
+  {{- $level := .level -}}
+  {{- $max   := .max -}}
+
+  {{- $isActive := eq $node.RelPermalink $ctx.RelPermalink -}}
+  {{- $isOpen   := or $isActive ($node.IsAncestor $ctx) -}}
+
+  {{- $hasChildren := or (gt (len $node.Sections) 0) (gt (len $node.RegularPages) 0) -}}
+  {{- $hasMore := and $hasChildren (lt $level $max) -}}
+
+  {{- $title := $node.LinkTitle | default $node.Title -}}
+  {{- $levelClass := printf "level-%d" $level -}}
+
+  {{- if and $hasMore (or (eq $node.Kind "section") (eq $node.Kind "branch")) -}}
+    <details class="hb-tree-node {{ $levelClass }}" {{ if $isOpen }}open{{ end }}>
+      <summary>
+        <a href="{{ $node.RelPermalink }}" class="{{ cond $isActive "active" "" }}">{{ $title }}</a>
+      </summary>
+
+      {{- $secs := sort $node.Sections "Weight" "Title" -}}
+      {{- range $secs -}}
+        {{ template "hbnode" (dict "node" . "ctx" $ctx "level" (add $level 1) "max" $max) }}
+      {{- end -}}
+
+      {{- $pages := sort $node.RegularPages "Weight" "Title" -}}
+      {{- range $pages -}}
+        {{ template "hbnode" (dict "node" . "ctx" $ctx "level" (add $level 1) "max" $max) }}
+      {{- end -}}
+    </details>
+  {{- else -}}
+    <div class="hb-tree-item {{ $levelClass }}">
+      <a href="{{ $node.RelPermalink }}" class="{{ cond $isActive "active" "" }}">{{ $title }}</a>
+    </div>
+  {{- end -}}
 {{- end -}}

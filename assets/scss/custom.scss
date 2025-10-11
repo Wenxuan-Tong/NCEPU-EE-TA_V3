@@ -540,20 +540,26 @@ table, td, th {
 /* =========================
    details/summary 折叠节点样式
    ========================= */
-.hb-tree details.hb-tree-node {
-  margin: .25rem 0; /* 仅控制上下间距 */
+/* 主题主色（可按需调整） */
+:root {
+  --hb-accent: var(--bs-primary, #004a8b);
 }
+
+/* ===== 树容器基础 ===== */
+.hb-tree { margin: 0; padding: 0; font-size: .98rem; }
+.hb-tree a { text-decoration: none; color: inherit; padding: .15rem 0; }
+
+/* ===== details/summary 折叠节点 ===== */
+.hb-tree details.hb-tree-node { margin: .2rem 0; } /* 仅上下间距 */
 .hb-tree details.hb-tree-node > summary {
   list-style: none;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
-.hb-tree details.hb-tree-node > summary::-webkit-details-marker {
-  display: none;
-}
+.hb-tree details.hb-tree-node > summary::-webkit-details-marker { display: none; }
 
-/* 小三角图标样式 */
+/* 小三角（单一定义，避免重复） */
 .hb-tree details.hb-tree-node > summary::before {
   content: "▸";
   display: inline-block;
@@ -561,73 +567,46 @@ table, td, th {
   margin-right: .25rem;
   transform-origin: center;
   transition: transform .15s ease;
-  color: #004a8b;
+  color: #6c757d;
 }
-.hb-tree details.hb-tree-node[open] > summary::before {
-  transform: rotate(90deg);
-}
+.hb-tree details.hb-tree-node[open] > summary::before { transform: rotate(90deg); }
 
-/* =========================
-   缩进层级（通过嵌套 .hb-tree 控制）
-   ========================= */
-.hb-tree .hb-tree {           /* 二级目录 */
-  padding-left: 2rem;
-}
-.hb-tree .hb-tree .hb-tree {  /* 三级目录 */
-  padding-left: 2.5rem;
-}
-.hb-tree .hb-tree .hb-tree .hb-tree { /* 四级目录兜底 */
-  padding-left: 3rem;
-}
+/* ===== 缩进（按 level-* 类精确控制） ===== */
+.hb-tree .level-1 { padding-left: 0rem;  font-weight: 600; }
+.hb-tree .level-2 { padding-left: .5rem;  }
+.hb-tree .level-3 { padding-left: 1.0rem; }
+.hb-tree .level-4 { padding-left: 1.5rem; }
+.hb-tree .level-5 { padding-left: 2.0rem; }
 
-
-/* =========================
-   激活与展开层级的颜色高亮
-   ========================= */
-
-/* 当前选中页面（active 链接） */
+/* ===== 激活/悬停高亮 ===== */
 .hb-tree a.active {
-  color: #004a8b;               /* 主色（你也可以改成 var(--bs-primary)） */
+  color: var(--hb-accent);
   font-weight: 700;
-  border-left: 3px solid #004a8b;
-  padding-left: 0.4rem;
-  background-color: rgba(0,74,139,0.06); /* 淡蓝背景，方便区分 */
+  border-left: 3px solid var(--hb-accent);
+  padding-left: .4rem;
+  background-color: rgba(0, 74, 139, .06); /* #004a8b 的浅色背景 */
   border-radius: .2rem;
 }
-
-/* 鼠标悬停时 */
 .hb-tree a:hover {
-  color: #004a8b;
+  color: var(--hb-accent);
   text-decoration: underline;
 }
 
-/* 当前层级的父级 summary 也高亮（即打开的目录） */
+/* 已展开的父级也弱高亮，便于追踪路径 */
 .hb-tree details.hb-tree-node[open] > summary > a {
-  color: #004a8b;
+  color: var(--hb-accent);
   font-weight: 600;
 }
-
-/* 若该父层正包含 active 子项，则整体边框提示 */
 .hb-tree details.hb-tree-node[open] {
-  border-left: 2px solid rgba(0,74,139,0.3);
+  border-left: 2px solid rgba(0, 74, 139, .30);
   padding-left: .4rem;
 }
 
-
-
-
-/* 左栏高亮与缩进 */
-.hb-tree a.active { font-weight: 600; color: var(--bs-primary); }
-.hb-tree details.hb-tree-node > summary::before {
-  content: "▸";
-  display: inline-block; width: 1rem; margin-right: .25rem;
-  transform-origin: center; transition: transform .15s ease; color: #6c757d;
+/* 侧栏吸顶，避免压住顶部导航条（HugoBlox 有 wc-navbar 高度变量） */
+.sidebar-sticky {
+  position: sticky;
+  top: calc(var(--wc-navbar-height, 64px) + 12px);
 }
-.hb-tree details[open] > summary::before { transform: rotate(90deg); }
-
-/* 侧栏吸顶避免遮住导航条 */
-.sidebar-sticky { position: sticky; top: calc(var(--wc-navbar-height, 64px) + 12px); }
-
 
 
 
@@ -666,3 +645,19 @@ figure img:hover {
   transform: scale(1.02);
 }
 
+/* 侧栏缩进：按层级递增；不显示根标题 */
+.hb-tree { margin: 0; padding-left: 0; list-style: none; }
+.hb-tree .hb-tree { padding-left: 0; } /* 先清零，按层级单独设置 */
+
+.hb-tree.level-1 > .hb-tree-item { padding-left: 0rem; }
+.hb-tree.level-2 { padding-left: .75rem; }
+.hb-tree.level-3 { padding-left: 1.25rem; }
+.hb-tree.level-4 { padding-left: 1.75rem; }
+.hb-tree.level-5 { padding-left: 2.25rem; }
+
+.hb-tree .hb-tree-item { margin: .25rem 0; }
+.hb-tree a { text-decoration: none; display: inline-block; padding: .15rem 0; }
+.hb-tree a.active { font-weight: 600; color: var(--bs-primary); }
+
+/* 祖先链（已展开的分支）可略加强调（可选） */
+.hb-tree .active-parent > a { font-weight: 600; }

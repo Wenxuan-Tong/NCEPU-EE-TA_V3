@@ -1,19 +1,23 @@
 {{ define "main" }}
-  <div class="container">
-    <div class="row mt-4">
-      <aside class="col-lg-3">
-        <div class="hb-navbox sidebar-sticky">
-          {{/* 固定根：teaching-awards */}}
-          {{ $root := site.GetPage "section" "EE-awards/teaching-awards" }}
-          {{ partial "nav-tree.html" (dict "ctx" . "node" $root "level" 1 "max" 4 "showRoot" false) }}
-        </div>
-      </aside>
+<div class="container">
+  <div class="row mt-4">
+    <aside class="col-lg-3">
+      {{ partial "nav-tree.html" (dict "ctx" . "max" 5 "showRoot" false) }}
+    </aside>
 
-      <main class="col-lg-9">
-        <h1>{{ .Title }}</h1>
-        {{ .Content }}
-        {{/* 可选：列表/卡片等内容块 */}}
-      </main>
-    </div>
+    <main class="col-lg-9">
+      <h1 class="mb-3">{{ .Title }}</h1>
+      {{ .Content }}
+
+      {{/* 如需在少数列表页继续展示子项，才在该页 front matter 写 list_children: true */}}
+      {{ if .Params.list_children }}
+        <div class="mt-3">
+          {{ range .Pages.ByWeight }}
+            <div class="mb-2"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </main>
   </div>
+</div>
 {{ end }}
