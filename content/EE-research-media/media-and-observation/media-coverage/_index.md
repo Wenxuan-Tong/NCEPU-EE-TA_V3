@@ -1,0 +1,18 @@
+---
+title: "媒体报道"
+summary: "主流媒体与行业期刊对学院代表性成果与人物的报道。"
+weight: 20
+---
+
+### 栏目概述
+
+学院科研成果与社会服务受到多家主流媒体与行业期刊关注，反映了学院在能源科技创新与人才培养方面的社会影响力。
+
+---
+
+### 板块导航
+
+| 报道 | 内容概述 |
+|------|-----------|
+| [2022 雄安建设成果报道](/EE-research-media/media-and-observation/media-coverage/2022-xiongan-award-news/) | “中国雄安”专题报道学院科研团队国际发明大奖成果。 |
+| [2023 “零碳·弦乐”社会实践报道](/EE-research-media/media-and-observation/media-coverage/2023-zero-carbon-violin/) | 报道学院学生团队探索零碳绿电与音乐文化融合创新实践。 |

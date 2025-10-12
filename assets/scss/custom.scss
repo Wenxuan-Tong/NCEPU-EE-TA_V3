@@ -691,3 +691,69 @@ figure img:hover {
 @media (max-width:480px){
   .hb-g-item img{height:180px}
 }
+
+
+
+
+/* —— 基础色与字号体系（可按需微调） —— */
+:root {
+  --hb-primary: #0B3D70;   /* 主色：深蓝 */
+  --hb-accent:  #1E66D0;   /* 强调：亮蓝 */
+  --hb-muted:   #6b7280;   /* 次要文字 */
+}
+
+/* 标题行距与粗细统一 */
+.section-heading, .hb-block h2, .hb-block h3 {
+  letter-spacing: .2px;
+  font-weight: 800;
+}
+
+/* 导语段落：稍大、略浅灰，易读 */
+.hb-lead {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #374151;
+  margin-bottom: .25rem;
+}
+
+/* 重点词：更深色+半粗 */
+.hb-strong {
+  color: var(--hb-primary);
+  font-weight: 700;
+}
+
+/* 提示条：浅底+圆角 */
+.hb-note {
+  margin-top: .25rem;
+  padding: .5rem .75rem;
+  background: #F8FAFC;
+  border-left: 3px solid var(--hb-accent);
+  border-radius: .375rem;
+  color: #334155;
+  font-size: .95rem;
+}
+
+/* 统一列表：行距与缩进 */
+.hb-block ul, .hb-block ol, .content ul, .content ol {
+  margin: .25rem 0 .75rem 1.15rem;
+}
+.hb-block li {
+  margin: .25rem 0;
+  line-height: 1.8;
+}
+
+/* 亮点数据卡片 */
+.hb-stats .card,
+.p-3.rounded.shadow-sm.bg-white.h-100.text-center.border-0 {
+  border-radius: 14px !important;
+  box-shadow: 0 8px 20px rgba(9, 30, 66, .06) !important;
+}
+.hb-stats .h2, .p-3 .h2 {
+  font-size: 2rem;
+  color: var(--hb-accent);
+  font-weight: 800;
+}
+.hb-stats .small, .hb-stats .x-small,
+.p-3 .text-muted.small, .p-3 .text-muted.x-small {
+  color: var(--hb-muted) !important;
+}

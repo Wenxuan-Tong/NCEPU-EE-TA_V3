@@ -1,20 +1,20 @@
-content/
-├─ awards/                         ← 一级栏目（顶栏）
-│  ├─ _index.md                    ← 一级栏目页（启用左侧目录）
-│  ├─ teaching-awards/             ← 二级：教学成果奖
-│  │  ├─ _index.md                 ← 二级目录页（左侧显示其子页面）
-│  │  ├─ 2025-bj-award/            ← 三级：具体条目（Page Bundle）
-│  │  │  ├─ index.md               ← 正文（图文说明）
-│  │  │  ├─ featured.jpg           ← 列表/卡片封面
-│  │  │  ├─ cert-1.jpg             ← 证书/公示等配图
-│  │  │  └─ cert-2.jpg
-│  │  └─ 2023-national-award/
-│  │     └─ index.md (+ 图)
-│  ├─ cases/                       ← 二级：被采用/示范案例
-│  │  ├─ _index.md
-│  │  └─ 2024-case-xxx/
-│  │     └─ index.md (+ 图)
-│  └─ papers-books/                ← 二级：论文与专著（如需）
-│     ├─ _index.md
-│     └─ 2022-paper-abc/
-│        └─ index.md (+ 图/PDF)
+---
+title: "科研与人才 / 媒体观察"
+summary: "展示学院在科研项目、人才称号、科技奖励与社会传播方面的综合成果。"
+weight: 60
+---
+
+本栏目系统展示华北电力大学电气与电子工程学院在科研与人才培养方面的综合成就，涵盖**科研项目立项、科研成果奖励、高层次人才称号以及媒体传播与社会服务**等内容，体现学院在**能源科技创新、学术引领与社会影响力**方面的持续贡献。
+
+---
+
+### 板块导航
+
+| 模块 | 内容概述 |
+|------|-----------|
+| [科研奖励](/EE-research-media/research-awards/) | 汇总国家级、省部级与行业科技奖励成果，展示科研创新能力与影响力。 |
+| [科研项目](/EE-research-media/projects/) | 包括国家自然科学基金、国防科研项目及重点工程技术合作项目。 |
+| [人才称号](/EE-research-media/talent-titles/) | 展示教师获得的国家级与省部级高层次人才荣誉称号。 |
+| [社会服务与媒体报道](/EE-research-media/media-and-observation/) | 记录教师与学生团队在社会服务、行业合作及媒体传播中的优秀事迹。 |
+
+

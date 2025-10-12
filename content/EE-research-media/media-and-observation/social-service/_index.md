@@ -1,0 +1,18 @@
+---
+title: "社会服务"
+summary: "教师在社会实践、校企合作与乡村振兴中的服务与贡献。"
+weight: 10
+---
+
+### 栏目概述
+
+学院教师积极参与社会实践与行业合作，在服务国家战略、乡村振兴与青年社会实践中发挥示范作用。
+
+---
+
+### 板块导航
+
+| 项目 | 内容概述 |
+|------|-----------|
+| [2023 “青年服务国家”先进工作者](/EE-research-media/media-and-observation/social-service/2023-capital-univ-practice/) | 陈艳波教授荣获“青年服务国家”首都大学生暑期社会实践先进工作者称号。 |
+| [2023 河南确山县乡村振兴校企合作项目](/EE-research-media/media-and-observation/social-service/2023-henan-rural-revitalization/) | 校企合作助力乡村振兴，推动清洁能源项目在基层落地。 |

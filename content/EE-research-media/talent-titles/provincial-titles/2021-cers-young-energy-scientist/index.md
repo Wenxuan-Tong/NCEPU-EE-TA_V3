@@ -1,22 +1,21 @@
 ---
-title: "日内瓦国际发明展金奖（2022）"
-date: 2022-04-01
-summary: "低碳与绿色调度控制一体化软件平台获日内瓦国际发明展金奖。"
+title: "中国能源研究会优秀青年能源科技工作者"
+date: 2021-01-01
+summary: "陈艳波. 中国能源研究会优秀青年能源科技工作者, 中国能源研究会, 2021。"
 ---
 
-### 奖项概述
+### 荣誉简介
 
-项目“**Integrated software platform for low carbon and green dispatching and control of power systems**”在日内瓦国际发明展中获得**金奖**，体现了团队在新能源消纳、低碳调度与智能控制平台化落地方面的国际影响力。该项目面向复杂电力系统的低碳运行需求，构建多源数据驱动的调度-控制一体化平台。
+陈艳波教授获中国能源研究会授予“优秀青年能源科技工作者”称号（2021），该荣誉旨在表彰青年科研人员在能源科技创新与学术推广方面的突出贡献。
 
-### 获奖信息
+### 荣誉信息
 
-| 项目 | 内容 |
-|---|---|
-| 奖项名称 | 日内瓦国际发明展金奖 |
-| 获奖项目 | Integrated software platform for low carbon and green dispatching and control of power systems |
-| 获奖级别 | 国际级 |
-| 获奖人 | 陈艳波，张智 |
-| 授予单位 | 瑞士联邦政府、世界知识产权组织 |
-| 获奖时间 | 2022 年 |
+| 类别 | 内容 |
+|------|------|
+| 荣誉名称 | 优秀青年能源科技工作者 |
+| 获得者 | 陈艳波 |
+| 授予机构 | 中国能源研究会 |
+| 授予时间 | 2021 年 |
+| 级别 | 省部级 |
 
-{{< hb-figure src="images/img.png" maxw="80%" align="center" caption="日内瓦国际发明展金奖" >}}
+{{< hb-figure src="images/img.png" maxw="80%" align="center" caption="优秀青年能源科技工作者荣誉证书" >}}
