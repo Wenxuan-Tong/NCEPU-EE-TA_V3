@@ -36,7 +36,7 @@ education:
       year: curriculum2
     - course: 储能技术研发中心
       institution: 新能源电力系统国家重点实验室
-      year: 2023
+      year: 2021-geting-hubei-power
 
 # Social/Academic Networking
 social:

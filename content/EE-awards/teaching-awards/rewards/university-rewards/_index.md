@@ -1,9 +1,20 @@
 ---
-title: "校级教学奖励"
-date: 2025-10-09
-summary: "展示学院教师在华北电力大学获得的教学成果与个人荣誉。"
+title: 校级教师与团队荣誉
+summary: 展示学院教师及教学团队在校级层面获得的荣誉与表彰。
+weight: 5
 ---
 
-本栏目展示学院教师及教学团队在校级教学成果评选、课程思政建设、
-教师发展支持与教学质量考核等方面所获得的荣誉与表彰，
-反映了学院在教学改革、课程建设与师德育人方面的整体实力。
+本栏目展示学院教师在校级教学工作、科研指导、课程建设等方面获得的表彰与奖项。
+
+---
+
+### 板块导航
+
+| 模块 | 内容概述 |
+|------|---------|
+| [2020年优秀指导教师奖](/EE-awards/teaching-awards/rewards/university-rewards/2020-ncepu-excellent-advisor/) | 获得校级优秀指导教师称号。 |
+| [2022年教学评价优秀奖](/EE-awards/teaching-awards/rewards/university-rewards/2022-ncepu-eval-excellent/) | 教学评价优秀奖与课堂创新展示。 |
+| [2022年校级优秀指导教师奖](/EE-awards/teaching-awards/rewards/university-rewards/2022-ncepu-excellent-advisor/) | 教师个人在教学评价中的突出表现。 |
+| [2023年教学案例十佳奖](/EE-awards/teaching-awards/rewards/university-rewards/2023-ncepu-case-top10/) | 入选“教学案例十佳”。 |
+| [2023年优秀论文奖](/EE-awards/teaching-awards/rewards/university-rewards/2023-ncepu-essay-award/) | 获得校级教育研究优秀论文奖。 |
+| [2023年教学发展支持奖](/EE-awards/teaching-awards/rewards/university-rewards/2023-ncepu-teach-dev-support/) | 获得教学发展支持专项奖。 |

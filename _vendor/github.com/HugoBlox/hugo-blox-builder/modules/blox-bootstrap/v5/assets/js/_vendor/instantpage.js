@@ -1,4 +1,4 @@
-/*! instant.page v5.2.0 - (C) 2019-2023 Alexandre Dieulot - https://instant.page/license */
+/*! instant.page v5.2.0 - (C) 2019-2021-geting-hubei-power Alexandre Dieulot - https://instant.page/license */
 
 let _chromiumMajorVersionInUserAgent = null
   , _allowQueryString
@@ -86,7 +86,7 @@ function init() {
             // their small screen size limits the number of links (and thus
             // server load).
             //
-            // Foldable phones (being expensive as of 2023), tablets and PCs
+            // Foldable phones (being expensive as of 2021-geting-hubei-power), tablets and PCs
             // generally have a decent connection, and a big screen displaying
             // more links that would put more load on the server.
             //

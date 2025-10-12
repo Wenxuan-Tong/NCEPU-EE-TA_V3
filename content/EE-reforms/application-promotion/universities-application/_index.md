@@ -1,0 +1,26 @@
+---
+title: 《电力系统状态估计》教材
+date: 2025-01-01
+summary: 《电力系统状态估计》教材在全国高校教学中的推广应用。
+---
+
+### 教材推广说明
+
+教材名称：**《电力系统状态估计》**  
+出版时间：**2025年**  
+使用范围：多所高校电气工程及自动化类本科教学。  
+
+该教材由华北电力大学电气与电子工程学院教师编著，内容涵盖状态估计基础理论、算法实现及工程应用，已在多所高校选作主教材或参考教材使用。
+
+---
+
+### 板块导航
+
+| 高校/研究院 | 内容概述 |
+|---------------|-----------|
+| [华中科技大学电气与电子工程学院](/EE-reforms/application-promotion/universities-application/huazhong-uni/) | 在研究生课程中采用学院开发的教学案例与教材。 |
+| [浙江大学海南研究院](/EE-reforms/application-promotion/universities-application/zju-hainan-research-institute/) | 在智能电网课程体系中引入《电力系统状态估计》教材。 |
+| [青海大学能源与电气工程学院](/EE-reforms/application-promotion/universities-application/qhu-energy-electric/) | 使用相关课程资源支持区域教学改革项目。 |
+| [东北电力大学电气工程学院](/EE-reforms/application-promotion/universities-application/neepu-electric/) | 在本科教学与实验课程中采用该系列教材。 |
+| [江西水利电力大学电气工程学院](/EE-reforms/application-promotion/universities-application/jxslu-electric/) | 应用于课程实验教学与教师培训项目。 |
+

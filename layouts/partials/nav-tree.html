@@ -1,37 +1,40 @@
 {{/* =========================================================
   Partial: nav-tree.html
   用法：{{ partial "nav-tree.html" (dict "ctx" . "max" 5 "showRoot" false) }}
-  - 固定根优先级：.ctx.Params.nav_root > site.Params.nav_root > 默认 "EE-awards"
 ========================================================= */}}
 
 {{- $ctx      := .ctx -}}
 {{- $max      := .max | default 5 -}}
 {{- $showRoot := .showRoot | default false -}}
 
-{{/* 允许通过 front matter 或全站参数固定根（建议设为 "EE-awards"） */}}
-{{- $wantRoot := $ctx.Params.nav_root | default $ctx.Site.Params.nav_root | default "EE-awards" -}}
-{{- $root := $ctx.Site.GetPage (printf "/%s" (trim $wantRoot "/")) -}}
+{{/* 锁定当前页面所属的顶层区段 */}}
+{{- $root := or $ctx.FirstSection $ctx.CurrentSection -}}
 {{- if not $root -}}
-  {{- $root = $ctx.Site.GetPage (printf "section/%s" (trim $wantRoot "/")) -}}
-{{- end -}}
-{{- if not $root -}}
-  {{- $root = $ctx.CurrentSection -}}
+  {{- with $ctx.Section -}}
+    {{- $root = site.GetPage (printf "section/%s" .) -}}
+  {{- end -}}
 {{- end -}}
 
-{{- if not $root -}}
-<nav class="hb-navbox hb-tree"></nav>
+{{- if $root -}}
+  {{/* 统一收集子项（Sections + RegularPages）并按 Weight/Title 排序 */}}
+  {{- $kids := slice -}}
+  {{- range $root.Sections     }}{{ $kids = $kids | append . }}{{ end -}}
+  {{- range $root.RegularPages }}{{ $kids = $kids | append . }}{{ end -}}
+  {{- $kids = sort $kids "Weight" "Title" -}}
+
+  <nav class="hb-navbox hb-tree">
+    {{- if $showRoot -}}
+      {{ template "hbnode" (dict "node" $root "ctx" $ctx "level" 1 "max" $max) }}
+    {{- else -}}
+      {{- range $kids -}}
+        {{ template "hbnode" (dict "node" . "ctx" $ctx "level" 1 "max" $max) }}
+      {{- end -}}
+    {{- end -}}
+  </nav>
 {{- else -}}
-<nav class="hb-navbox hb-tree">
-  {{- if $showRoot -}}
-    {{ template "hbnode" (dict "node" $root "ctx" $ctx "level" 1 "max" $max) }}
-  {{- else -}}
-    {{- $secs  := sort $root.Sections     "Weight" "Title" -}}
-    {{- $pages := sort $root.RegularPages "Weight" "Title" -}}
-    {{- range $secs  }}{{ template "hbnode" (dict "node" . "ctx" $ctx "level" 1 "max" $max) }}{{ end -}}
-    {{- range $pages }}{{ template "hbnode" (dict "node" . "ctx" $ctx "level" 1 "max" $max) }}{{ end -}}
-  {{- end -}}
-</nav>
+  <nav class="hb-navbox hb-tree"></nav>
 {{- end -}}
+
 
 {{/* =============== 递归节点渲染 =============== */}}
 {{- define "hbnode" -}}
