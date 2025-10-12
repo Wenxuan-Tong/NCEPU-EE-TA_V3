@@ -6,6 +6,9 @@
 title: NCEPU-EE-TA # Website name
 baseURL: 'https://example.com/' # Website URL
 
+canonifyURLs: true     # 把以“/”开头的内部链接统一加上 baseURL
+relativeURLs: false
+
 ############################
 ## LANGUAGE
 ############################
