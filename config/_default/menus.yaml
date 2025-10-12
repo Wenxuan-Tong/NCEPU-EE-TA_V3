@@ -6,27 +6,27 @@
 main:
 
   - name: 主页
-    url:
+    pageRef:
     weight: 1
 
   - name: 教学成果与奖项
-    url: EE-awards
+    pageRef: EE-awards
     weight: 10
 
   - name: 平台与专业建设
-    url: EE-platforms
+    pageRef: EE-platforms
     weight: 20
 
   - name: 教学项目与改革
-    url: EE-reforms
+    pageRef: EE-reforms
     weight: 30
 
   - name: 学生培养与竞赛
-    url: EE-students
+    pageRef: EE-students
     weight: 40
 
   - name: 科研与人才/媒体
-    url: EE-research-media
+    pageRef: EE-research-media
     weight: 50
 
 #
