@@ -12,7 +12,7 @@ weight: 1
 
 | 模块                                                                            | 内容概述 |
 |-------------------------------------------------------------------------------|---------|
-| [《电力系统自动化》](/EE-awards/papers-books/2019-power-system-automation/)            | 《电力系统自动化》相关著作与获奖信息。 |
+| [《电力系统自动化》]({{< relref "EE-awards/papers-books/2019-power-system-automation" >}})            | 《电力系统自动化》相关著作与获奖信息。 |
 | [《综合能源状态估计》](/EE-awards/papers-books/2021-integrated-energy-estimation/)      | 综合能源系统状态估计的理论与方法。 |
 | [《电力系统状态估计》](/EE-awards/papers-books/2021-power-system-estimation/)           | 电力系统状态估计与应用。 |
 | [《清洁能源与智慧能源导论》](/EE-awards/papers-books/2022-clean-smart-energy/)             | 新能源与智慧能源体系导论类教材/专著。 |
