@@ -1,9 +1,9 @@
-name: Deploy Hugo site to GitHub Pages
+name: Deploy Hugo to GitHub Pages
 
 on:
   push:
-    branches: [ dev-now ]   # ← 从 dev-now 分支触发发布
-  workflow_dispatch:        # 手动触发也可以
+    branches: [ dev-now ]     # ← 你当前推送的分支
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -20,35 +20,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      # 安装 Hugo（扩展版）
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.150.1'
+          submodules: true        # 主题是子模块时必须
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.150.1' # 用你本地的版本，extended 主题要开启
           extended: true
 
-      # 生产构建（不包含草稿）
-      # 如果你的 config 里 baseURL 未设置，建议在这里显式传入 repo 路径
-      - name: Build
+      - name: Build site
         env:
           HUGO_ENV: production
         run: |
+          rm -rf public
           hugo --minify --baseURL "https://wenxuan-tong.github.io/NCEPU-EE-TA_V3/"
+          touch public/.nojekyll   # 防止 Jekyll 处理，保留下划线等路径
 
-      # 将 ./public 目录作为 Pages 工件上传
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
   deploy:
+    runs-on: ubuntu-latest
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
