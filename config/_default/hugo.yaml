@@ -4,11 +4,10 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: NCEPU-EE-TA # Website name
-baseURL: "https://wenxuan-tong.github.io/NCEPU-EE-TA_V3/"
-canonifyURLs: true
-relativeURLs: false
-# （其余保持现状）
+baseURL: 'https://example.com/' # Website URL
 
+canonifyURLs: true     # 把以“/”开头的内部链接统一加上 baseURL
+relativeURLs: false
 
 ############################
 ## LANGUAGE
