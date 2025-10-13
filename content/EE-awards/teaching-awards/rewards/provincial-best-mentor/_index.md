@@ -12,4 +12,4 @@ weight: 1
 
 | 模块 | 内容概述 |
 |------|---------|
-| [2023年软件杯省级优秀指导教师](/EE-awards/teaching-awards/rewards/provincial-best-mentor/2023-softwarecup-best-mentor/) | 在全国大学生软件杯竞赛中获省级优秀指导教师称号。 |
+| 2023年软件杯省级优秀指导教师 | 在全国大学生软件杯竞赛中获省级优秀指导教师称号。 |

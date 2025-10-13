@@ -12,4 +12,4 @@ weight: 2
 
 | 模块 | 内容概述 |
 |------|---------|
-| [2022年北京市课程思政示范团队](/EE-awards/teaching-awards/rewards/provincial-si-course-team/2022-bj-si-course-team/) | 入选北京市课程思政示范团队。 |
+| 2022年北京市课程思政示范团队 | 入选北京市课程思政示范团队。 |

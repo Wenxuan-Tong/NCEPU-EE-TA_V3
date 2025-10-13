@@ -12,5 +12,5 @@ weight: 50
 
 | 模块 | 内容概述 |
 |------|-----------|
-| [社会服务](/EE-research-media/media-and-observation/social-service/) | 展示教师在社会实践、校企合作及乡村振兴领域的服务贡献。 |
-| [媒体报道](/EE-research-media/media-and-observation/media-coverage/) | 收录主流媒体对学院代表性成果与活动的专题报道。 |
+| 社会服务 | 展示教师在社会实践、校企合作及乡村振兴领域的服务贡献。 |
+| 媒体报道 | 收录主流媒体对学院代表性成果与活动的专题报道。 |

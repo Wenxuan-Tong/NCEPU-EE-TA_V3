@@ -14,5 +14,5 @@ weight: 10
 
 | 项目 | 内容概述 |
 |------|-----------|
-| [2023 “青年服务国家”先进工作者](/EE-research-media/media-and-observation/social-service/2023-capital-univ-practice/) | 陈艳波教授荣获“青年服务国家”首都大学生暑期社会实践先进工作者称号。 |
-| [2023 河南确山县乡村振兴校企合作项目](/EE-research-media/media-and-observation/social-service/2023-henan-rural-revitalization/) | 校企合作助力乡村振兴，推动清洁能源项目在基层落地。 |
+| 2023 “青年服务国家”先进工作者 | 陈艳波教授荣获“青年服务国家”首都大学生暑期社会实践先进工作者称号。 |
+| 2023 河南确山县乡村振兴校企合作项目 | 校企合作助力乡村振兴，推动清洁能源项目在基层落地。 |

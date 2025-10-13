@@ -12,4 +12,4 @@ weight: 1
 
 | 模块 | 内容概述 |
 |------|---------|
-| [2024年全国电气工程案例赛一等奖](/EE-awards/teaching-awards/competitions/national-competitions/2024-ee-case-national-1st/) | 电气工程案例教学设计项目荣获全国一等奖。 |
+| 2024年全国电气工程案例赛一等奖 | 电气工程案例教学设计项目荣获全国一等奖。 |

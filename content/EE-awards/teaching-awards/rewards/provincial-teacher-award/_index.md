@@ -12,6 +12,6 @@ weight: 3
 
 | 模块 | 内容概述 |
 |------|---------|
-| [2013年北京市优秀教师](/EE-awards/teaching-awards/rewards/provincial-teacher-award/2013-beijing-excellent-teacher/) | 荣获北京市优秀教师称号。 |
-| [2019年北京市留学生教育先进个人](/EE-awards/teaching-awards/rewards/provincial-teacher-award/2019-beijing-foreign-student-adm/) | 获评北京市优秀国际学生教育指导教师。 |
-| [2024年北京市青年教学名师](/EE-awards/teaching-awards/rewards/provincial-teacher-award/2024-bj-young-master/) | 获得“北京市青年教学名师”称号。 |
+| 2013年北京市优秀教师 | 荣获北京市优秀教师称号。 |
+| 2019年北京市留学生教育先进个人 | 获评北京市优秀国际学生教育指导教师。 |
+| 2024年北京市青年教学名师 | 获得“北京市青年教学名师”称号。 |

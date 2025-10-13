@@ -12,9 +12,9 @@ weight: 5
 
 | 模块 | 内容概述 |
 |------|---------|
-| [2020年优秀指导教师奖](/EE-awards/teaching-awards/rewards/university-rewards/2020-ncepu-excellent-advisor/) | 获得校级优秀指导教师称号。 |
-| [2022年教学评价优秀奖](/EE-awards/teaching-awards/rewards/university-rewards/2022-ncepu-eval-excellent/) | 教学评价优秀奖与课堂创新展示。 |
-| [2022年校级优秀指导教师奖](/EE-awards/teaching-awards/rewards/university-rewards/2022-ncepu-excellent-advisor/) | 教师个人在教学评价中的突出表现。 |
-| [2023年教学案例十佳奖](/EE-awards/teaching-awards/rewards/university-rewards/2023-ncepu-case-top10/) | 入选“教学案例十佳”。 |
-| [2023年优秀论文奖](/EE-awards/teaching-awards/rewards/university-rewards/2023-ncepu-essay-award/) | 获得校级教育研究优秀论文奖。 |
-| [2023年教学发展支持奖](/EE-awards/teaching-awards/rewards/university-rewards/2023-ncepu-teach-dev-support/) | 获得教学发展支持专项奖。 |
+| 2020年优秀指导教师奖 | 获得校级优秀指导教师称号。 |
+| 2022年教学评价优秀奖 | 教学评价优秀奖与课堂创新展示。 |
+| 2022年校级优秀指导教师奖 | 教师个人在教学评价中的突出表现。 |
+| 2023年教学案例十佳奖 | 入选“教学案例十佳”。 |
+| 2023年优秀论文奖 | 获得校级教育研究优秀论文奖。 |
+| 2023年教学发展支持奖 | 获得教学发展支持专项奖。 |

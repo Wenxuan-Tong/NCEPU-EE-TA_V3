@@ -17,10 +17,10 @@ summary: 《电力系统状态估计》教材在全国高校教学中的推广�
 ### 板块导航
 
 | 高校/研究院 | 内容概述 |
-|---------------|-----------|
-| [华中科技大学电气与电子工程学院](/EE-reforms/application-promotion/universities-application/huazhong-uni/) | 在研究生课程中采用学院开发的教学案例与教材。 |
-| [浙江大学海南研究院](/EE-reforms/application-promotion/universities-application/zju-hainan-research-institute/) | 在智能电网课程体系中引入《电力系统状态估计》教材。 |
-| [青海大学能源与电气工程学院](/EE-reforms/application-promotion/universities-application/qhu-energy-electric/) | 使用相关课程资源支持区域教学改革项目。 |
-| [东北电力大学电气工程学院](/EE-reforms/application-promotion/universities-application/neepu-electric/) | 在本科教学与实验课程中采用该系列教材。 |
-| [江西水利电力大学电气工程学院](/EE-reforms/application-promotion/universities-application/jxslu-electric/) | 应用于课程实验教学与教师培训项目。 |
+|--------------|-----------|
+| 华中科技大学电气与电子工程学院 | 在研究生课程中采用学院开发的教学案例与教材。 |
+| 浙江大学海南研究院 | 在智能电网课程体系中引入《电力系统状态估计》教材。 |
+| 青海大学能源与电气工程学院 | 使用相关课程资源支持区域教学改革项目。 |
+| 东北电力大学电气工程学院 | 在本科教学与实验课程中采用该系列教材。 |
+| 江西水利电力大学电气工程学院 | 应用于课程实验教学与教师培训项目。 |
 

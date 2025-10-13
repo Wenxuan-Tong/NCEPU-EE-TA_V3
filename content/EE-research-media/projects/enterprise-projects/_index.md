@@ -14,6 +14,6 @@ weight: 20
 
 | 项目 | 内容概述 |
 |------|-----------|
-| [2023 青海电网科技项目](/EE-research-media/projects/enterprise-projects/2023-qh-reactive-optimization/) | 大规模新能源交直流送端电网动态无功需求评估与优化协调研究。 |
-| [2018 山西电网项目](/EE-research-media/projects/enterprise-projects/2018-sx-green-dispatch/) | 山西电网绿色调度技术研究，探索新能源优化调度机制。 |
-| [2018 国网经研院项目](/EE-research-media/projects/enterprise-projects/2018-hvdc-transient-stability/) | 柔性直流系统抑制暂态失稳的控制策略研究。 |
+| 2023 青海电网科技项目 | 大规模新能源交直流送端电网动态无功需求评估与优化协调研究。 |
+| 2018 山西电网项目 | 山西电网绿色调度技术研究，探索新能源优化调度机制。 |
+| 2018 国网经研院项目 | 柔性直流系统抑制暂态失稳的控制策略研究。 |

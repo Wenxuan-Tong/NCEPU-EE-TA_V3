@@ -12,5 +12,5 @@ weight: 2
 
 | 模块 | 内容概述 |
 |------|---------|
-| [2024年省级电气工程案例赛一等奖](/EE-awards/teaching-awards/competitions/provincial-competitions/2024-ee-case-nc-1st/) | 电气案例教学创新项目获省级一等奖。 |
-| [2024年省级电气工程案例赛二等奖](/EE-awards/teaching-awards/competitions/provincial-competitions/2024-ee-case-nc-2nd/) | 案例教学设计项目获省级二等奖。 |
+| 2024年省级电气工程案例赛一等奖 | 电气案例教学创新项目获省级一等奖。 |
+| 2024年省级电气工程案例赛二等奖 | 案例教学设计项目获省级二等奖。 |

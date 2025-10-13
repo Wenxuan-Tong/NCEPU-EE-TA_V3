@@ -12,5 +12,5 @@ weight: 2
 
 | 模块 | 内容概述 |
 |------|---------|
-| [2025年校级教学成果一等奖](/EE-awards/teaching-awards/awards/university-awards/2025-ncepu-first-award/) | 《电力系统分析基础》课程改革获校级一等奖。 |
-| [2025年校级教学成果特等奖](/EE-awards/teaching-awards/awards/university-awards/2025-ncepu-grand-award/) | 《智能电网分析与仿真》项目获校级特等奖。 |
+| 2025年校级教学成果一等奖 | 《电力系统分析基础》课程改革获校级一等奖。 |
+| 2025年校级教学成果特等奖 | 《智能电网分析与仿真》项目获校级特等奖。 |

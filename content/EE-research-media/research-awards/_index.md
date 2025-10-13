@@ -12,7 +12,7 @@ weight: 30
 
 | 模块 | 内容概述 |
 |---|---|
-| [国际级学术奖励](/EE-research-media/research-awards/international-awards/) | 国际发明展等权威赛事的高等级奖励与展出项目。 |
-| [省部级学术奖励](/EE-research-media/research-awards/provincial-awards/) | 河北、山西、北京等省市科技进步奖等成果。 |
-| [学会级学术奖励](/EE-research-media/research-awards/society-awards/) | 中国产学研合作促进会等权威学会授予的成果奖。 |
+| 国际级学术奖励 | 国际发明展等权威赛事的高等级奖励与展出项目。 |
+| 省部级学术奖励 | 河北、山西、北京等省市科技进步奖等成果。 |
+| 学会级学术奖励 | 中国产学研合作促进会等权威学会授予的成果奖。 |
 

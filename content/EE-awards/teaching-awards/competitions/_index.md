@@ -12,5 +12,5 @@ weight: 2
 
 | 模块 | 内容概述 |
 |------|---------|
-| [国家级教学竞赛](/EE-awards/teaching-awards/competitions/national-competitions/) | 全国高校教师教学创新大赛、课程思政示范竞赛等。 |
-| [省部级教学竞赛](/EE-awards/teaching-awards/competitions/provincial-competitions/) | 省级教学创新大赛、实验教学设计赛等。 |
+| 国家级教学竞赛 | 全国高校教师教学创新大赛、课程思政示范竞赛等。 |
+| 省部级教学竞赛 | 省级教学创新大赛、实验教学设计赛等。 |

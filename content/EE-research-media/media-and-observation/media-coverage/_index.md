@@ -14,5 +14,5 @@ weight: 20
 
 | 报道 | 内容概述 |
 |------|-----------|
-| [2022 雄安建设成果报道](/EE-research-media/media-and-observation/media-coverage/2022-xiongan-award-news/) | “中国雄安”专题报道学院科研团队国际发明大奖成果。 |
-| [2023 “零碳·弦乐”社会实践报道](/EE-research-media/media-and-observation/media-coverage/2023-zero-carbon-violin/) | 报道学院学生团队探索零碳绿电与音乐文化融合创新实践。 |
+| 2022 雄安建设成果报道 | “中国雄安”专题报道学院科研团队国际发明大奖成果。 |
+| 2023 “零碳·弦乐”社会实践报道 | 报道学院学生团队探索零碳绿电与音乐文化融合创新实践。 |

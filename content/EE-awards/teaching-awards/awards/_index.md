@@ -12,6 +12,6 @@ weight: 1
 
 | 模块 | 内容概述 |
 |------|---------|
-| [国家级与学会级教学成果奖](/EE-awards/teaching-awards/awards/national-society-awards/) | 汇总国家级及教育部学会级教学成果奖、优秀教学案例等。 |
-| [校级教学成果奖](/EE-awards/teaching-awards/awards/university-awards/) | 展示校级教学成果奖、教学创新项目及示范教学案例。 |
+| 国家级与学会级教学成果奖 | 汇总国家级及教育部学会级教学成果奖、优秀教学案例等。 |
+| 校级教学成果奖 | 展示校级教学成果奖、教学创新项目及示范教学案例。 |
 

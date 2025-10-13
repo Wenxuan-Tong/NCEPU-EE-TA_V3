@@ -12,5 +12,5 @@ weight: 4
 
 | 模块 | 内容概述 |
 |------|---------|
-| [2013年继续教育教学团队](/EE-awards/teaching-awards/rewards/provincial-ug-team/2013-continuing-edu-team/) | 获评省级继续教育优秀教学团队。 |
-| [2019年北工大联合本科教学团队](/EE-awards/teaching-awards/rewards/provincial-ug-team/2019-bjut-ug-team/) | 与北工大联合申报本科教学团队。 |
+| 2013年继续教育教学团队 | 获评省级继续教育优秀教学团队。 |
+| 2019年北工大联合本科教学团队 | 与北工大联合申报本科教学团队。 |
